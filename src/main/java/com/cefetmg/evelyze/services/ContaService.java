@@ -30,14 +30,14 @@ public class ContaService {
     
     
     public List<ContaDTO> findAll() {
-        List<Conta> listaConta = contaRepository.findAll();
-        return listaConta.stream().map(ContaDTO::new).toList();
+        List<Conta> listaConta = contaRepository.findAllWithRateios();
+        return listaConta.stream().map(conta -> new ContaDTO(conta, true)).toList();
     }
 
     public ContaDTO findById(Long id) {
-        Conta conta = contaRepository.findById(id)
+        Conta conta = contaRepository.findByIdWithRateios(id)
                 .orElseThrow(() -> new EntityNotFoundException("Conta não encontrada com ID: " + id));
-        return new ContaDTO(conta);
+        return new ContaDTO(conta, true);
     }
 
     public ContaDTO insert(ContaDTO contaDTO) {

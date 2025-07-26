@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_conta")
@@ -30,6 +32,9 @@ public class Conta {
     @ManyToOne
     @JoinColumn(name = "morador_responsavel_id")
     private Morador responsavel;
+    
+    @OneToMany(mappedBy = "conta", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<RateioConta> rateios = new ArrayList<>();
 
     public Conta() {
 		
@@ -96,6 +101,10 @@ public class Conta {
     }
     public void setResponsavel(Morador responsavel) { 
     	this.responsavel = responsavel; 
+    }
+    
+    public List<RateioConta> getRateios() {
+    	return rateios;
     }
 
     
