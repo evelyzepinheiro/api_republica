@@ -6,6 +6,11 @@ INSERT INTO tb_morador(nome, cpf, data_nascimento, celular, email) VALUES ('Fabb
 
 INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('conta de luz', '100,00');
 INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('conta de agua', '100,00');
+INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('aluguel', '1000,00');
+INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('telefone', '60,00');
+INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('Internet', '100,00');
+INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('IPTU', '380,00');
+INSERT INTO tb_tipoconta(descricao, observacao) VALUES ('Outros', '120,00');
 
 INSERT INTO tb_conta(observacao, tipo_conta_id, valor, data_Vencimento, situacao, morador_responsavel_id) VALUES('Observação 1', 1, 100, '2025-01-01', 'PENDENTE', 1);
 INSERT INTO tb_conta(observacao, tipo_conta_id, valor, data_Vencimento, situacao, morador_responsavel_id) VALUES('Observação 2', 2, 100, '2025-01-01', 'PENDENTE', 2);
